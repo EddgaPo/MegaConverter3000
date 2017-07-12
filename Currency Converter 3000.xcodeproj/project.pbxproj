@@ -13,6 +13,8 @@
 		6BBBF28A1F0C1316003E3AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BBBF2881F0C1316003E3AAC /* Main.storyboard */; };
 		6BBBF28C1F0C1316003E3AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BBBF28B1F0C1316003E3AAC /* Assets.xcassets */; };
 		6BBBF28F1F0C1316003E3AAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BBBF28D1F0C1316003E3AAC /* LaunchScreen.storyboard */; };
+		6BE150DB1F100AD5002C1CE1 /* KNADataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE150DA1F100AD5002C1CE1 /* KNADataClass.m */; };
+		6BE150DE1F10F9D2002C1CE1 /* KNAParserXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE150DD1F10F9D2002C1CE1 /* KNAParserXML.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		6BBBF28B1F0C1316003E3AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BBBF28E1F0C1316003E3AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BBBF2901F0C1316003E3AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BE150D91F100A2F002C1CE1 /* KNADataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNADataClass.h; sourceTree = "<group>"; };
+		6BE150DA1F100AD5002C1CE1 /* KNADataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNADataClass.m; sourceTree = "<group>"; };
+		6BE150DC1F10F9D2002C1CE1 /* KNAParserXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNAParserXML.h; sourceTree = "<group>"; };
+		6BE150DD1F10F9D2002C1CE1 /* KNAParserXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNAParserXML.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,10 @@
 				6BBBF28D1F0C1316003E3AAC /* LaunchScreen.storyboard */,
 				6BBBF2901F0C1316003E3AAC /* Info.plist */,
 				6BBBF27F1F0C1316003E3AAC /* Supporting Files */,
+				6BE150D91F100A2F002C1CE1 /* KNADataClass.h */,
+				6BE150DA1F100AD5002C1CE1 /* KNADataClass.m */,
+				6BE150DC1F10F9D2002C1CE1 /* KNAParserXML.h */,
+				6BE150DD1F10F9D2002C1CE1 /* KNAParserXML.m */,
 			);
 			path = "Currency Converter 3000";
 			sourceTree = "<group>";
@@ -110,6 +120,7 @@
 				TargetAttributes = {
 					6BBBF27B1F0C1316003E3AAC = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = JYTDKU932N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -153,6 +164,8 @@
 				6BBBF2871F0C1316003E3AAC /* ViewController.m in Sources */,
 				6BBBF2841F0C1316003E3AAC /* AppDelegate.m in Sources */,
 				6BBBF2811F0C1316003E3AAC /* main.m in Sources */,
+				6BE150DB1F100AD5002C1CE1 /* KNADataClass.m in Sources */,
+				6BE150DE1F10F9D2002C1CE1 /* KNAParserXML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JYTDKU932N;
 				INFOPLIST_FILE = "Currency Converter 3000/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nikolay.koroid.Currency-Converter-3000";
@@ -281,6 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JYTDKU932N;
 				INFOPLIST_FILE = "Currency Converter 3000/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nikolay.koroid.Currency-Converter-3000";
@@ -307,6 +322,7 @@
 				6BBBF2951F0C1316003E3AAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
