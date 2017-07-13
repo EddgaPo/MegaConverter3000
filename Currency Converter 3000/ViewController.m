@@ -17,6 +17,7 @@
     NSDecimalNumberHandler *_behaviorDec; //правило округления до 2 знаков арифметическое
     NSDecimalNumberHandler *_behaviorDecDown; //правило округления до 2 знаков вниз
     KNADataClass *_currencyData; //Класс для работы с данными о курсах валют
+    Boolean _buttonPressed;
 }
 @end
 
@@ -49,6 +50,7 @@
     
     //устанавливаем, что на данный момент не происходит выбора валюты
     _buttonSummoner = @"none";
+    _buttonPressed = false;
     
     //добавляем наблюдателя за событием UIKeyboardDidShowNotification
     //это нужно для того чтоб после появления клавиатуры для ввода отключить остальные элементы UI
@@ -105,10 +107,17 @@
     NSString *tempStringForCurrency = _pickerArray[row]; //указатель на выбранное значение
     if ([_buttonSummoner isEqualToString: @"From"]){ //если пользователь выбирает начальную валюту
         _userChoicePickerFrom = tempStringForCurrency; //присваиваем Label начальной валюты выбранное значение Picker View
+        if(_buttonPressed){
+            _initialCurrency.text = _userChoicePickerFrom;
+        }
     }
     if ([_buttonSummoner isEqualToString: @"To"]){ //если пользователь выбирает целевую валюту
         _userChoisePickerTo = tempStringForCurrency; //присваиваем Label целевой валюты выбранное значение Picker View
+        if(_buttonPressed) {
+            _convertedCurrency.text = _userChoisePickerTo;
+        }
     }
+    _buttonPressed = false;
 }
 
 
@@ -117,6 +126,7 @@
 - (IBAction)userChoiceFrom:(id)sender {
     [self.view endEditing:YES]; //на случай если открыта клавиатура
     _buttonSummoner = @"From"; //вызов Picker View будет со стороны начальной валюты
+    _buttonPressed = false;
     
     //устанавливаем начальное значение Picker View в соответствии с указанной в UI начальной валютой
     [_currencyPicker selectRow:[[_currencyTypes objectForKey:_initialCurrency.text] intValue] inComponent:0 animated:NO];
@@ -136,6 +146,7 @@
 - (IBAction)userChoiceTo:(id)sender {
     [self.view endEditing:YES]; //на случай если открыта клавиатура
     _buttonSummoner = @"To"; //вызов Picker View со стороны целевой валюты
+    _buttonPressed = false;
     
     //устанавливаем начальное значение Picker View в соответствии с указанной в UI целевой валютой
     [_currencyPicker selectRow:[[_currencyTypes objectForKey:_convertedCurrency.text] intValue] inComponent:0 animated:NO];
@@ -154,6 +165,7 @@
 #pragma mark - toolbar of Picker view actions
 //нажата кнопка выбора на Toolbar для Picker View
 - (IBAction)pressedDone:(id)sender {
+    _buttonPressed = true;
     if([_buttonSummoner isEqualToString: @"From"]){ //вызов был со стороны начальной валюты?
         _initialCurrency.text = _userChoicePickerFrom; //обновляем Label начальной валюты
     }
@@ -162,7 +174,7 @@
     }
     
     _UIViewWithPicker.hidden = true; //скрываем Picker View
-    _buttonSummoner = @"none"; //выбор валюты прекращен
+
     
     //включаем взаимодействие с остальными элементами, отображаем их если скрыли
     _buttonTo.userInteractionEnabled = true;
@@ -176,7 +188,7 @@
 //нажата кнопка отмены на Toolbar для Picker View
 - (IBAction)pressedCancel:(id)sender {
     _UIViewWithPicker.hidden = true; //скрываем Picker View
-    _buttonSummoner = @"none"; //выбор валюты прекращен
+
     
     //включаем взаимодействие с остальными элементами, отображаем их если скрыли
     _buttonTo.userInteractionEnabled = true;
