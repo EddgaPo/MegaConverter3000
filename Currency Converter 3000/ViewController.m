@@ -17,7 +17,7 @@
     NSDecimalNumberHandler *_behaviorDec; //правило округления до 2 знаков арифметическое
     NSDecimalNumberHandler *_behaviorDecDown; //правило округления до 2 знаков вниз
     KNADataClass *_currencyData; //Класс для работы с данными о курсах валют
-    Boolean _buttonPressed;
+    Boolean _buttonPressed; //для отслеживания запоздания в работе Picker view
 }
 @end
 
